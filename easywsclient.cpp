@@ -139,7 +139,7 @@ void klose(ConnectionContext* ptConnCtx) {
 	if (ptConnCtx->sockfd) {
 		closesocket(ptConnCtx->sockfd);
 	}
-	if (ptConnCtx->sslHandle==NULL) {
+	if (ptConnCtx->sslHandle!=NULL) {
 		SSL_shutdown(ptConnCtx->sslHandle);
 		SSL_free(ptConnCtx->sslHandle);
 	}
